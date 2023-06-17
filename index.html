@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="diseño.css">
+  <style>
+    .resultado {
+      background-color: rgba(0, 191, 255, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .resultado-tarea2 {
+      background-color: rgba(144, 238, 144, 0.5);
+      border: 2px solid rgb(144, 238, 144);
+    }
+
+    .tarea-title {
+      background-color: rgba(255, 0, 0, 0.5);
+      padding: 10px;
+      border-radius: 10px;
+      font-family: "Arial Rounded MT Bold", sans-serif;
+      color: white;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="tarea">
+      <div class="tarea-title">mayor entre dos numeros:</div>
+      <button class="button" id="button1">comparar números</button>
+      <div class="resultado" id="resultado1"></div>
+    </div>
+  </div>
+  <div>
+    <div class="tarea">
+      <div class="tarea-title">¿es un numero par?:</div>
+      <button class="button" id="button2">comparar paridad</button>
+      <div class="resultado resultado-tarea2" id="resultado2"></div>
+    </div>
+  </div>
+
+  <script>
+    function tarea1() {
+      var numero1 = parseFloat(prompt("Ingrese el primer número:"));
+      var numero2 = parseFloat(prompt("Ingrese el segundo número:"));
+
+      var resultadoDiv = document.getElementById("resultado1");
+
+      if (isNaN(numero1) || isNaN(numero2)) {
+        resultadoDiv.textContent = "Ingrese un número válido";
+      } else {
+        if (numero1 > numero2) {
+          resultadoDiv.textContent = "El número " + numero1 + " es mayor que " + numero2;
+        } else if (numero1 < numero2) {
+          resultadoDiv.textContent = "El número " + numero2 + " es mayor que " + numero1;
+        } else {
+          resultadoDiv.textContent = "Ambos números son iguales";
+        }
+      }
+    }
+
+    function tarea2() {
+      var numero = parseFloat(prompt("Ingrese un número:"));
+
+      var resultadoDiv = document.getElementById("resultado2");
+
+      if (isNaN(numero)) {
+        resultadoDiv.textContent = "Ingrese un número válido";
+      } else {
+        if (numero % 2 === 0) {
+          resultadoDiv.textContent = "El número " + numero + " es par";
+        } else {
+          resultadoDiv.textContent = "El número " + numero + " no es par";
+        }
+      }
+    }
+
+    document.getElementById("button1").addEventListener("click", tarea1);
+
+    document.getElementById("button2").addEventListener("click", tarea2);
+  </script>
+</body>
+</html>
+
+
+
+
+
